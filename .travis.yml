@@ -1,0 +1,17 @@
+dist: trusty
+
+language: go
+
+go:
+  - "1.10.x"
+  - "1.11.x"
+
+addons:
+  sonarcloud:
+    organization: "welldoer-github"
+    token:
+      secure: "e8dd90ccc383def0adf6926495369421eab149f6" # encrypted value of your token
+
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - sonar-scanner
