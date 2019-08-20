@@ -16,5 +16,5 @@ install: true
 
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - go test -v -cover -race ./...
+  - go test -v -cover -race -coverprofile cover.out ./...
   - sonar-scanner -X
